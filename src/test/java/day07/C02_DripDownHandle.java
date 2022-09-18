@@ -6,6 +6,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -17,7 +18,7 @@ public class C02_DripDownHandle {
 
     /*
 
-              ●https://www.amazon.com/ adresinegidin.
+              ●https://www.amazon.com/ adresine gidin.
               -Test1
               Arama kutusunun yanindaki kategori menusundeki kategori sayisinin45
               oldugunu testedin
@@ -59,7 +60,7 @@ public class C02_DripDownHandle {
         WebElement ddm = driver.findElement(By.xpath("//*[@id='searchDropdownBox']"));
         ddm.sendKeys("Books");
 //           2.Arama kutusuna Java yazin vearatin
-        driver.findElement(By.cssSelector("input[id='twotabsearchtextbox']")).sendKeys("Java", Keys.ENTER);
+        driver.findElement(By.cssSelector("input[id='twotabsearchtextbox']")).sendKeys("Java"+ Keys.ENTER);
 //           3.Bulunan sonuc sayisiniyazdirin
         WebElement sonucYazisi = driver.findElement(By.xpath("//*[@class='a-section a-spacing-small a-spacing-top-small']"));
         System.out.println(sonucYazisi.getText());

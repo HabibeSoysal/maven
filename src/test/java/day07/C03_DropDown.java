@@ -1,17 +1,26 @@
 package day07;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
+import java.time.Duration;
+import java.util.List;
+
 public class C03_DropDown {
-    public static void main(String[] args) {
          /*
 
            ●https://www.amazon.com/ adresinegidin.
            -Test1
-           Arama kutusunun yanindaki kategori menusundeki kategori sayisinin45
+           Arama kutusunun yanindaki kategori menusundeki kategori sayisinin 45
            oldugunu testedin
            -Test2
            1.Kategori menusunden Books seceneginisecin
@@ -37,7 +46,7 @@ public class C03_DropDown {
         public void test1() {
             //Arama kutusunun yanindaki kategori menusundeki kategori sayisinin 45
             //oldugunu test edin
-            WebElement ddm = driver.findElement(By.xpath("//*[@id='searchDropdownBox']"));
+            WebElement ddm = driver.findElement(By.xpath("//select[@id='searchDropdownBox']"));
             select = new Select(ddm);
         /*
         Dropdown menuye ulasmak için Select classından bir obje oluştururuz
@@ -66,7 +75,7 @@ public class C03_DropDown {
          */
             System.out.println(select.getFirstSelectedOption().getText());
 //           2.Arama kutusuna Java yazin ve aratin
-            driver.findElement(By.id("twotabsearchtextbox")).sendKeys("Java", Keys.ENTER);
+            driver.findElement(By.id("twotabsearchtextbox")).sendKeys("Java"+ Keys.ENTER);
 //           3.Bulunan sonuc sayisiniyazdirin
             WebElement sonucYazisi = driver.findElement(By.xpath("//*[@class='a-section a-spacing-small a-spacing-top-small']"));
             System.out.println(sonucYazisi.getText());
