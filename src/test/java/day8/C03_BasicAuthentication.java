@@ -11,7 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public class C03_BasicAutomation {
+public class C03_BasicAuthentication {
     /*
   Bir class olusturun : BasicAuthentication
   https://the-internet.herokuapp.com/basic_auth sayfasina gidin

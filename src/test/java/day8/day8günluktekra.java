@@ -1,6 +1,7 @@
 package day8;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -9,7 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public class C01_Allerts {
+public class day8günluktekra {
     /*
  - https://the-internet.herokuapp.com/javascript_alerts adresine gidelim
  - Click for js Alert butonuna tıklayalım
@@ -23,6 +24,14 @@ public class C01_Allerts {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+
+
+    }
+
+    @After
+    public void tearDown() {
+        // driver.close();
+
     }
 
     @Test
@@ -31,9 +40,10 @@ public class C01_Allerts {
         driver.get("https://the-internet.herokuapp.com/javascript_alerts");
 
 //        - Click for js Alert butonuna tıklayalım
-      driver.findElement(By.xpath("//*[text()='Click for JS Alert']")).click();
+        driver.findElement(By.xpath("//*[text()='Click for JS Alert']")).click();
 //        - Tıkladıktan sonra çıkan uyarı mesajına (alerte) tamam diyelim
-       Thread.sleep(3000);
+        Thread.sleep(3000);
         driver.switchTo().alert().accept();
     }
 }
+
