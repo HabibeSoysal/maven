@@ -16,6 +16,7 @@ import java.util.List;
 
 public class c04_calısmam {
     WebDriver driver;
+
     @Before
     public void setup() {
         WebDriverManager.chromedriver().setup();
@@ -23,10 +24,12 @@ public class c04_calısmam {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
+
     @After
     public void tearDown() {
         //driver.quit();
     }
+
     @Test
     public void test1() throws InterruptedException {
         //https://the-internet.herokuapp.com/windows adresine gidin.
@@ -38,7 +41,7 @@ public class c04_calısmam {
         Thread.sleep(3000);
 
 //Click Here butonuna basın.
-List<String> windowList=new ArrayList<>(driver.getWindowHandles());
+        List<String> windowList = new ArrayList<>(driver.getWindowHandles());
         System.out.println("windowList = " + windowList);
         driver.switchTo().window(windowList.get(1));
         //Acilan yeni pencerenin sayfa başlığının (title) “New Window” oldugunu dogrulayin.
@@ -48,9 +51,9 @@ List<String> windowList=new ArrayList<>(driver.getWindowHandles());
         Assert.assertTrue(driver.findElement(By.xpath("//h3")).isDisplayed());
 //Bir önceki pencereye geri döndükten sonra sayfa başlığının “The Internet” olduğunu  doğrulayın.
 
-    driver.switchTo().window(windowList.get(0));
-    Assert.assertEquals("The Internet",driver.getTitle());
-
+        driver.switchTo().window(windowList.get(0));
+        Assert.assertEquals("The Internet", driver.getTitle());
 
 
     }
+}

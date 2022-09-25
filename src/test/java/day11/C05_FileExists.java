@@ -15,7 +15,7 @@ public class C05_FileExists extends TestBaseBeforeAfter {
         //https://the-internet.herokuapp.com/download adresine gidelim.
         driver.get("https://the-internet.herokuapp.com/download");
         //test.txt dosyasını indirelim
-        driver.findElement(By.xpath("//*[text()='test.txt']")).click();
+        // driver.findElement(By.xpath("//*[text()='test.txt']")).click();
         Thread.sleep(2000);
         //Ardından isExist( )  methodunda dosyanın başarıyla indirilip indirilmediğini test edelim
         String dosyaYolu = "C:\\Users\\Lenovo\\Downloads\\test.txt";

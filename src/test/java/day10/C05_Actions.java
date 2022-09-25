@@ -22,4 +22,21 @@ public class C05_Actions extends TestBaseBeforeAfter {
         //“Drop here” yazisi yerine “Dropped!” oldugunu test edin
         Assert.assertEquals("Dropped!", driver.findElement(By.xpath("//*[text()='Dropped!']")).getText());
     }
+
+    public static class C01Calışmam117 extends TestBaseBeforeAfter {
+        @Test
+        public void name() {
+            //1 https://www.amazon.com/ adresine gidelim
+            driver.get("https://www.amazon.com");
+            //Sag ust bolumde bulunan “Account & Lists” menusunun acilmasi icin
+            //mouse’u bu menunun ustune getirelim
+            WebElement accountList = driver.findElement(By.id("nav-link-accountList"));
+            Actions actions = new Actions(driver);
+            actions.moveToElement(accountList).perform();
+
+            driver.findElement(By.xpath("//*[text()='Create a List']")).click();
+           Assert.assertEquals("Your Lists", driver.findElement(By.xpath("//*[@class='nav-a-content']")).getText());
+
+        }
+    }
 }
